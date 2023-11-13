@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+/* CSS */
+:root { font-family: 'Helvetica', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Helvetica var', sans-serif; }
+}
+@font-face {
+  font-family: "Mersad";
+  src: url(public/fonts/MersadRegular.otf);
+}
+@font-face {
+  font-family: "Mergeone";
+  src: url(public/fonts/MergeOne-Regular.woff);
+}
+@font-face {
+  font-family: "MersadSemibold";
+  src: url(public/fonts/MersadSemiBold.otf);
+}
+@font-face {
+  font-family: "Cambridge";
+  src: url(public/fonts/Cambridge.otf);
+}
+@font-face {
+  font-family: "Kleemax";
+  src: url(public/fonts/kleemaxdemo.otf);
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url(public/fonts/Helvetica.ttf);
+}
+@font-face {
+  font-family: "Basement";
+  src: url("../fonts/BSBlack.eot");
+  src: url("../fonts/BSBlack.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/BSBlack.woff2") format("woff2"),
+    url("../fonts/BSBlack.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  descent-override: 0%;
+}
+.gradient-grid  {
+
+background-image: radial-gradient(circle at center center, transparent 0%,rgba(255,255,255, 0) 99%),repeating-linear-gradient(0deg, rgba(205,205,205, 0.2) 0px, rgba(205,205,205, 0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(205,205,205, 0.2) 0px, rgba(205,205,205, 0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgba(255,255,255, 0),rgba(255,255,255, 0));
+}
+
+/*.splide__pagination {
+  visibility: hidden;
+}*/
+html.dark {
+  background-color: #1F2021;
+  color: #D3D3C7;
+  
+}
+
+.dark .horcent .heroimg{
+  background: url(src/images/hero/hero_image_light.png); 
+}
+.dark .horcent .chngcontainer{
+  background-color: #D3D3C7;
+  color: #1F2021;
+
+}
+.dark .nav-links a {
+  color: #D3D3C7;
+}
+.dark .horcent .hro2{
+  content: url(src/images/hero/hero2_dark.png);
+
+  border-radius: 17px;
+}
+.dark .horcent .y2k {
+  content: url(src/images/hero/y2k_star.png);
+  position: relative;
+ 
+}
+.dark .horcent .subra {
+  content: url(src/images/hero/Subtract_container.png);
+  
+}
+.dark .horcent .marquee{
+  color: #B8E4E6;
+}
+.dark .horcent .accentcol{
+  color: #B8E4E6;
+}
+.dark .horcent .arrow{
+  content: url(src/images/hero/arrow.svg);
+}
+.dark .abouttext{
+  color:#D3D3C7;
+  background-image: linear-gradient(to right,rgb(49, 49, 90),rgb(41, 47, 79));
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+.dark .todo {
+  background-color: #D3D3C7;
+  color:#1F2021;
+
+}
+.dark .ticketcard {
+  content: url("public/assets/images/about/Ticket.png");
+  
+}
+.dark .favcard{
+  color:#D3D3C7;
+  background-image: linear-gradient(to right,rgb(49, 49, 90),rgb(41, 47, 79));
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+
+.dark .circle-text{
+  background-color: #B8E4E6;
+  fill: #1F2021;
+}
+.dark .circle-text img{
+  content: url("src/images/logo_dark.png");
+}
+html {
+  background-color: #D3D3C7;
+  color: #1F2021;
+}
+
+ .nav-links a {
+  color: #1F2021;
+}
+ .horcent .heroimg{
+  content: url(src/images/hero/hero_image_dark.png); 
+}
+.dark .horcent .heroimg{
+  content: url(src/images/hero/hero_image_light.png); 
+}
+.horcent .chngcontainer{
+  background-color: #1F2021;
+  color: #D3D3C7;
+
+}
+.horcent .hro2{
+  
+  content: url(src/images/hero/hero2.png);
+  
+  border-radius: 17px;
+
+}
+ .horcent .y2k {
+  content: url(src/images/hero/y2k_star_black.png);
+  position: relative;
+
+}
+
+.horcent .subra {
+  content: url(src/images/hero/Subtract_black.png);
+
+}
+.horcent .marquee{
+  color: #2E4E95;
+}
+.horcent .accentcol{
+  color: #2E4E95;
+}
+.horcent .arrow{
+  content: url(src/images/hero/arrowdark.svg);
+}
+
+.abouttext{
+  color:#1F2021;
+  background-image: linear-gradient(to right,rgb(146, 146, 169),rgb(140, 146, 181));
+  border: 1px solid rgba(0, 0, 0, 0.2); 
+
+}
+
+.todo {
+  background-color: #1F2021;
+  color:#D3D3C7;
+}
+.ticketcard {
+  content: url("public/assets/images/about/Ticket_dark.png");
+  
+}
+.favcard{
+  color:#1F2021;
+  background-image: linear-gradient(to right,rgb(146, 146, 169),rgb(140, 146, 181));
+  border: 1px solid rgba(0, 0, 0, 0.2); 
+}
+.circle-text{
+  background-color: #2E4E95;
+  fill: #D3D3C7;
+}
+.circle-text img{
+  content: url("src/images/logo_light.png");
+}
+
+.logopic img{
+  content: url("src/images/logo_dark.png");
+}
+.dark .logopic img{
+  content: url("src/images/logo_light.png");
+}
+.favcard .desc{
+  font-size: 14px;
+  text-align: center;
+  color: #1F2021;
+}
+.dark .favcard .desc {
+  font-size: 14px;
+  text-align: center;
+  color: #d3dec7;
+}
+
+.dark .cards .song img{
+content: url(public/assets/images/about/phonk_dark.png);
+}
+.dark .cards .game img{
+  content: url(public/assets/images/about/game_light.png);
+
+}
+.dark .cards .distro img{
+  content: url(public/assets/images/about/arch_light.png);
+
+}
+.dark .cards .tool img{
+  content: url(public/assets/images/about/ps_light.png);
+
+}
+.dark .cards .manga img{
+  content: url(public/assets/images/about/op_manga_dark.png);
+
+}
+
+ .cards .song img{
+  content: url(public/assets/images/about/phonk_light.png);
+}
+ .cards .game img{
+  content: url(public/assets/images/about/game_dark.png);
+
+}
+ .cards .distro img{
+  content: url(public/assets/images/about/arch_dark.png);
+
+}
+ .cards .tool img{
+  content: url(public/assets/images/about/ps_dark.png);
+
+}
+ .cards .manga img{
+  content: url(public/assets/images/about/op_manga_light.png);
+
+}
+.horcent .screen{
+  background-color: #1f2021;
+  color: #d3d3c7;
+}
+.dark .horcent .screen{
+  background-color: #d3d3c7;
+  color: #1f2021;
+}
+body{
+  overflow-x: hidden;
+  
+}
+.contactsection{
+  background-color: #d3d3c7;
+  color: #1f2021;
+}
+.dark .contactsection{
+  background-color: #1f2021;
+  color: #d3d3c7;
+}
+
+.dark .conmarquee span{
+  color: #B8E4E6;
+}
+
+.conmarquee span{
+  color: #2E4E95;
+}

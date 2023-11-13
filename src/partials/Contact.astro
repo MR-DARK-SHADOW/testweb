@@ -1,0 +1,241 @@
+<style>
+  .top-nav {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+
+  text-align: center;
+  padding: 1em;
+  font-weight: 300;
+}
+
+.nav {
+  width: 100%;
+  height: 60px;
+  padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+}
+
+.nav .site-name {
+  font-family: "Basement Grotesque";
+  font-weight: 900;
+
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+
+  font-weight: 300;
+}
+
+.menu-icon {
+ 
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.menu-icon ion-icon {
+  position: relative;
+  top: 2px;
+}
+
+.conmarquee {
+  width: 1000%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 1.2em;
+}
+
+.conmarquee span {
+  font-family: "Kleemax";
+  font-weight: 700;
+ 
+ 
+  text-transform: uppercase;
+  display: inline-block;
+  padding-left: -10%;
+  animation: conmarquee-animation 80s linear infinite;
+}
+
+@keyframes conmarquee-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.col {
+  width: 50%;
+  padding: 1em 0em;
+}
+
+.contact-section h3 {
+  text-transform: uppercase;
+  color: #747474;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-section span {
+  text-transform: uppercase;
+}
+
+.contact-details p {
+  
+  
+  
+}
+
+.item {
+  padding-top: 4em;
+}
+
+.contact-info {
+  display: flex;
+}
+
+.address {
+ 
+}
+
+input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #747474;
+  font-size: 24px;
+  padding: 0.4em;
+  width: 100%;
+  color: #fff;
+  margin-right: 0.4em;
+}
+
+.row {
+  display: flex;
+  margin: 2em 0 !important;
+}
+
+textarea#message {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #747474;
+  font-size: 24px;
+  padding: 0.4em;
+  width: 100%;
+  color: #fff;
+  font-family: "Neue Montreal";
+}
+
+.submit {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.submit a {
+  text-decoration: none;
+ 
+  font-family: "Monument Extended";
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.send-icon {
+  font-size: 32px;
+}
+
+@media (min-width: 900px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  .contact-section {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+  .col {
+    width: 100%;
+  }
+}
+
+</style>
+<section class=" contactsection mx-auto max-w-screen overflow-x-hidden text-xs md:text-sm lg:text-sm xl:text-[16px] 2xl:text-[18px]" >
+  <div class='mx-auto   '>
+    <div class='mx-auto w-full'>
+      <div class='mx-auto lg:pt-6  px-1 py-12 w-screen'>
+<div class="concontainer w-[75%] relative left-[12.5%] overflow-x-hidden">
+  <div class="conmarquee 2xl:text-7xl pb-2.5 pt-14 xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl">
+    <span>
+      contact   / contact   / contact   / contact   / contact   /
+      contact   / contact   / contact   / contact   / contact  
+    </span>
+  </div>
+  <div class="contact-section text-center xl:text-left 2xl:text-left ">
+    <div class="contact-details pt-0 col text-xs md:text-sm lg:text-sm xl:text-[16px] 2xl:text-[18px] 2xl:pt-[100px] ">
+      <p>
+        Let's unlock together the next <br />
+        level of possibilities! <br />
+        Reach out.
+      </p>
+
+      <div class="social-media item text-xs md:text-sm lg:text-sm xl:text-[18px] 2xl:text-[20px]">
+        <h3>Social Media</h3>
+        <span>TWITTER — INSTAGRAM — GITHUB — TWITCH</span>
+      </div>
+
+      <div class="contact-info flex flex-col  xl:flex-row 2xl:flex-row ">
+        <div class="email item">
+          <h3>Get in touch</h3>
+          <span>hello@decentparadox.tech</span>
+        </div>
+        <div class="address item pl-0 xl:pl-[4em] 2xl:pl-[4em]">
+          <h3>location</h3>
+          <span>Bangalore - INDIA</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form col text-xs md:text-sm lg:text-sm xl:text-[18px] 2xl:text-[20px]">
+      <div class="wrapper">
+        <div class="row">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Company" />
+        </div>
+        <div class="row">
+          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Budget" />
+        </div>
+        <div class="row">
+          <textarea
+            type="text"
+            placeholder="Message"
+            rows="5"
+            id="message"
+          ></textarea>
+        </div>
+        <div class="row submit">
+          <a href="#">Submit</a>
+          <div class="send-icon">
+            <ion-icon name="arrow-forward-sharp"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>

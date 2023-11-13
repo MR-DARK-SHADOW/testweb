@@ -1,0 +1,517 @@
+---
+---
+
+<style>
+  .about_heading {
+    font-family: 'Kleemax';
+
+    text-transform: uppercase;
+
+    padding-top: 55px;
+  }
+  .abouttext {
+    margin: 0px 0px 0px 0px;
+    padding: 12px 12px;
+
+    z-index: 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    mask-image: radial-gradient(
+      circle at 276px 276px,
+      rgb(255, 255, 255) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    opacity: 1;
+
+    cursor: auto;
+    font-family: 'Mergeone';
+    position: relative;
+    top: 0px;
+  }
+  .abouttext h1 {
+    font-family: 'Kleemax';
+    text-transform: uppercase;
+  }
+  .todo {
+    height: 226px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 12px;
+    position: relative;
+
+    font-family: 'Mergeone';
+  }
+  .todo h1 {
+  }
+  .hr {
+    width: 90%;
+    height: 2px;
+    background-color: #1f2021;
+    padding: 0px 2px;
+    border-radius: 1px;
+  }
+  ul li {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  ul li.checked {
+    text-decoration: line-through;
+  }
+  .hr.anim {
+    &:before {
+      background-color: linear-gradient(
+        90deg,
+        #10111f 0%,
+        #10111f 5%,
+        transparent 5%,
+        transparent 10%,
+        #10111f 10%,
+        #10111f 15%,
+        transparent 15%,
+        transparent 20%,
+        #10111f 20%,
+        #10111f 25%,
+        transparent 25%,
+        transparent 30%,
+        #10111f 30%,
+        #10111f 35%,
+        transparent 35%,
+        transparent 40%,
+        #10111f 40%,
+        #10111f 45%,
+        transparent 45%,
+        transparent 50%,
+        #10111f 50%,
+        #10111f 55%,
+        transparent 55%,
+        transparent 60%,
+        #10111f 60%,
+        #10111f 65%,
+        transparent 65%,
+        transparent 70%,
+        #10111f 70%,
+        #10111f 75%,
+        transparent 75%,
+        transparent 80%,
+        #10111f 80%,
+        #10111f 85%,
+        transparent 85%,
+        transparent 90%,
+        #10111f 90%,
+        #10111f 95%,
+        transparent 95%,
+        transparent 100%
+      );
+
+      background-size: $barsize * 10;
+      background-position: center;
+      z-index: 1;
+
+      animation: bar 120s linear infinite;
+    }
+
+    &:hover {
+      &:before {
+        animation-duration: 20s;
+      }
+      &:after {
+        animation-duration: 2s;
+      }
+    }
+    @keyframes bar {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 200%;
+      }
+    }
+  }
+  .container {
+    display: flex;
+  }
+  .ticket img {
+    max-width: 100%;
+    height: 310px;
+  }
+
+  .ticket {
+    scale: 1.8;
+    position: relative;
+  }
+  .marquee {
+    --duration: 60s;
+    --gap: 2px;
+
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    transform: skewY(0deg);
+  }
+
+  .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    min-width: 100%;
+    animation: scroll var(--duration) linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__group {
+      animation-play-state: paused;
+    }
+  }
+
+  .marquee__group img {
+    max-width: clamp(10rem, 1rem + 28vmin, 20rem);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .marquee--borders {
+    border-block: 3px solid dodgerblue;
+    padding-block: 0.75rem;
+  }
+
+  .marquee--reverse .marquee__group {
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  .cards {
+    height: 259px;
+
+    border-radius: 10px;
+  }
+  .favcard {
+    width: 200px;
+    height: 258px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    mask-image: radial-gradient(
+      circle at 276px 276px,
+      rgb(255, 255, 255) 0%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+  }
+  .favcard img {
+    width: 80%;
+    height: 60%;
+
+    margin: 5px 10%;
+  }
+  .favcard .cate {
+  }
+  .circle-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100px;
+    font-family: 'Mergeone';
+    position: relative;
+  }
+  .text {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 8000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 8000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 8000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @-ms-keyframes spin {
+    from {
+      -ms-transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes spin {
+    from {
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>
+<section
+  class='max-w-screen no-scrollbar flex flex-row content-center overflow-x-hidden py-[35px]'
+>
+  <div class='mx-auto   max-w-full'>
+    <div class='mx-auto'>
+      <div class='mx-auto w-screen  px-1 py-12 lg:pt-6'>
+        <div
+          class='relative mx-auto  w-[75%] text-xs md:text-sm lg:text-sm xl:text-[16px] 2xl:text-[18px]'
+        >
+          <div
+            class='about_heading pb-[55px] pt-14 text-center leading-4 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-6 xl:text-right xl:text-6xl xl:leading-7 2xl:text-right 2xl:text-7xl 2xl:leading-9'
+          >
+            <h1>ABOUT</h1>
+          </div>
+          <div
+            class='container flex w-[100%] flex-col content-center gap-4  xl:flex-row 2xl:flex-row'
+          >
+            <div class=' flex flex-col xl:flex-row 2xl:flex-row'>
+              <div class='aboutcont flex content-start pb-2'>
+                <div class='abouttext h-auto w-auto xl:w-[648px] 2xl:h-[600px]'>
+                  <h1>I Identify myself as attack helicopter</h1> Hey, I'm Sasank
+                  Reddy, also known as "decentparadox." I'm currently a student pursuing
+                  a degree in Computer Science with a focus on Artificial Intelligence
+                  at Amrita School of Engineering, Bangalore. During the day, I work
+                  as a graphic and UI/UX designer, and I've got two years of experience
+                  under my belt. I'm also into tech stuff like reverse engineering,
+                  game hacking, and web development. On weekends, you'll find me
+                  diving into Capture The Flag (CTF) challenges.<br /><br />
+
+                  I'm all about learning and growth. My goal is to become a
+                  versatile problem solver, so I'm constantly improving my
+                  skills in areas like blockchain, app development, machine
+                  learning, and networking. I believe in being well-prepared
+                  before taking on any projects. When I'm not busy with tech, I
+                  love reading books and manga. It's my way of staying creative
+                  and inspired.<br /><br />
+
+                  I don't limit myself to one industry; I'm ready to adapt and
+                  take on new challenges. While I don't have a fancy mission
+                  statement, my passion for learning and mastering new skills
+                  drives me forward..
+                </div>
+              </div>
+
+              <img
+                draggable='false'
+                class='ticketcard hidden px-0.5 xl:block 2xl:block'
+                src='public/assets/images/about/Ticket.png'
+                alt=''
+              />
+            </div>
+
+            <div class='flex flex-col'>
+              <div class='flex flex-row '>
+                <img
+                  draggable='false'
+                  class='ticketcard h-auto w-[50%] px-0.5 md:w-[30%] xl:hidden 2xl:hidden'
+                  src='public/assets/images/about/Ticket.png'
+                  alt=''
+                />
+                <div class='flex flex-col xl:flex-row 2xl:flex-row'>
+                  <div class='todo h-auto w-auto xl:w-[250px] 2xl:w-[250px] '>
+                    <h1>Todo</h1>
+                    <br />
+
+                    <ul id='myUL'>
+                      <li>Complete this portfolio</li>
+                      <li>Reduce screen time</li>
+                      <li>Touch some grass</li>
+                      <li>Buy eggs</li>
+                      <li>Read a book</li>
+                      <li>Organize office</li>
+                    </ul>
+                  </div>
+
+                  <div
+                    class='circle-text flex h-auto w-[50%] shrink-0 items-center justify-center  xl:h-[175px] xl:w-[175px] 2xl:h-[175px] 2xl:w-[175px]'
+                  >
+                    <img
+                      class='w-[57.14%] xl:h-[100px] xl:w-[100px] 2xl:h-[100px] 2xl:w-[100px]'
+                      style='position:absolute;'
+                      src='../../../public/logo.png'
+                      alt=''
+                    />
+                    <div
+                      class='text h-auto w-[85.75%] xl:h-[150px] xl:w-[150px] 2xl:h-[150px] 2xl:w-[150px]'
+                    >
+                      <svg viewBox='0 0 100 100'>
+                        <defs>
+                          <path
+                            id='circle'
+                            d='
+                          M 50, 50
+                          m -37, 0
+                          a 37,37 0 1,1 74,0
+                          a 37,37 0 1,1 -74,0'
+                          ></path>
+                        </defs>
+                        <text font-size='14'>
+                          <textPath xlink:href='#circle'>
+                            Sasank Sasank Sasank Sasank Sasank
+                          </textPath>
+                        </text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class='cards w-[100%] content-center  xl:w-[433px] 2xl:w-[433px]'
+              >
+                <div class='marquee'>
+                  <div class='marquee__group'>
+                    <div class='favcard song'>
+                      <img src='public/assets/images/about/phonk.jpg' alt='' />
+                      <h1 class='name'>Murder in my mind</h1>
+                      <p class='desc'>I love all phonks btw</p>
+                    </div>
+                    <div class='favcard game'>
+                      <img src='public/assets/images/about/game.avif' alt='' />
+                      <h1 class='name'>Spiderman Remastered</h1>
+                      <p class='desc'>
+                        The only game that made me skip classes
+                      </p>
+                    </div>
+                    <div class='favcard distro'>
+                      <img src='public/assets/images/about/arch.png' alt='' />
+                      <h1 class='name'>Arch Linux</h1>
+                      <p class='desc'>W Arch, W Hyprland, My first rice</p>
+                    </div>
+                    <div class='favcard tool'>
+                      <img src='public/assets/images/about/ps_cc.jpg' alt='' />
+                      <h1 class='name'>Photoshop</h1>
+                      <p class='desc'>Can't do anything without this fr</p>
+                    </div>
+                    <div class='favcard manga'>
+                      <img src='public/assets/images/about/op_manga.jpg' alt=''
+                      />
+                      <h1 class='name'>One Piece</h1>
+                      <p class='desc'>
+                        Another day of thanking oda for making this masterpiece
+                      </p>
+                    </div>
+                  </div>
+
+                  <div aria-hidden='true' class='marquee__group'>
+                    <div class='favcard song'>
+                      <img src='public/assets/images/about/phonk.jpg' alt='' />
+                      <h1 class='name'>Murder in my mind</h1>
+                      <p class='desc'>I love all phonks btw</p>
+                    </div>
+                    <div class='favcard game'>
+                      <img src='public/assets/images/about/game.avif' alt='' />
+                      <h1 class='name'>Spiderman Remastered</h1>
+                      <p class='desc'>
+                        The only game that made me skip classes
+                      </p>
+                    </div>
+                    <div class='favcard distro'>
+                      <img src='public/assets/images/about/arch.png' alt='' />
+                      <h1 class='name'>Arch Linux</h1>
+                      <p class='desc'>W Arch, W Hyprland, My first rice</p>
+                    </div>
+                    <div class='favcard tool'>
+                      <img src='public/assets/images/about/ps_cc.jpg' alt='' />
+                      <h1 class='name'>Photoshop</h1>
+                      <p class='desc'>Can't do anything without this fr</p>
+                    </div>
+                    <div class='favcard manga'>
+                      <img src='public/assets/images/about/op_manga.jpg' alt=''
+                      />
+                      <h1 class='name'>One Piece</h1>
+                      <p class='desc'>
+                        Another day of thanking oda for making this masterpiece
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'
+>
+
+</script>
+
+<script>
+  var list = document.querySelector('ul');
+  list.addEventListener(
+    'click',
+    function (ev) {
+      if ((ev.target as HTMLElement).tagName === 'LI') {
+        (ev.target as HTMLElement).classList.toggle('checked');
+      }
+    },
+    false
+  );
+</script>
+
+<script
+  is:inline
+  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+>
+
+</script>
+<script
+  is:inline
+  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+>
+
+</script>
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js'
+>
+
+</script>

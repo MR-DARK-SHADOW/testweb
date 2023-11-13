@@ -1,0 +1,49 @@
+---
+import BaseHead from './BaseHead.astro';
+import Nav from '@/partials/Nav.astro';
+
+export interface Props {
+  head: {
+    title: string;
+    description: string;
+  };
+}
+---
+
+<html lang='en'>
+  <head>
+    <BaseHead />
+    <style>
+      .noise::before {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 1000vh;
+        content: '';
+        /* you can control opacity of noise  */
+        opacity: 0.03;
+        z-index: 1000;
+        pointer-events: none;
+        background: url(src/images/noise.gif);
+      }
+      .grid-lines {
+        content: '';
+        width: 5px;
+        height: 300vh;
+
+        position: absolute;
+        top: 0px;
+        left: 85px;
+      }
+    </style>
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body class='overflow-x-hidden'>
+    <Nav />
+    <div class='noise'>
+      
+      <slot></slot>
+    </div>
+  </body>
+</html>
