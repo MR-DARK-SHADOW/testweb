@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root { font-family: 'Inter', sans-serif; }
+:root { font-family: 'Inter', sans-serif; 
+  --color-menu-overlay: #a0e806;
+  --color-menu-text: #000;
+  --color-divider: #000000;}
 @supports (font-variation-settings: normal) {
   :root { font-family: 'Inter var', sans-serif; }
 }
@@ -12,27 +15,27 @@
 }
 @font-face {
   font-family: "Mersad";
-  src: url(public/fonts/MersadRegular.otf);
+  src: url(../../public/fonts/MersadRegular.otf);
 }
 @font-face {
   font-family: "Mergeone";
-  src: url(public/fonts/MergeOne-Regular.woff);
+  src: url(../../public/fonts/MergeOne-Regular.woff);
 }
 @font-face {
   font-family: "MersadSemibold";
-  src: url(public/fonts/MersadSemiBold.otf);
+  src: url(../../public/fonts/MersadSemiBold.otf);
 }
 @font-face {
   font-family: "Cambridge";
-  src: url(public/fonts/Cambridge.otf);
+  src: url(../../public/fonts/Cambridge.otf);
 }
 @font-face {
   font-family: "Kleemax";
-  src: url(public/fonts/kleemaxdemo.otf);
+  src: url(../../public/fonts/kleemaxdemo.otf);
 }
 @font-face {
   font-family: "Helvetica";
-  src: url(public/fonts/Helvetica.ttf);
+  src: url(../../public/fonts/Helvetica.ttf);
 }
 @font-face {
   font-family: "Basement";
@@ -59,7 +62,7 @@ html.dark {
 }
 
 .dark .horcent .heroimg{
-  background: url(src/images/hero/hero_image_light.png); 
+  background: url(../images/hero/hero_image_light.png); 
 }
 .dark .horcent .chngcontainer{
   background-color: #D3D3C7;
@@ -70,17 +73,17 @@ html.dark {
   color: #D3D3C7;
 }
 .dark .horcent .hro2{
-  content: url(src/images/hero/hero2_dark.png);
+  content: url(../images/hero/hero2_dark.png);
 
   border-radius: 17px;
 }
 .dark .horcent .y2k {
-  content: url(src/images/hero/y2k_star.png);
+  content: url(../images/hero/y2k_star.png);
   position: relative;
  
 }
 .dark .horcent .subra {
-  content: url(src/images/hero/Subtract_container.png);
+  content: url(../images/hero/Subtract_container.png);
   
 }
 .dark .horcent .marquee{
@@ -90,7 +93,7 @@ html.dark {
   color: #B8E4E6;
 }
 .dark .horcent .arrow{
-  content: url(src/images/hero/arrow.svg);
+  content: url(../images/hero/arrow.svg);
 }
 .dark .abouttext{
   color:#D3D3C7;
@@ -103,7 +106,7 @@ html.dark {
 
 }
 .dark .ticketcard {
-  content: url("public/assets/images/about/Ticket.png");
+  content: url("../../public/assets/images/about/Ticket.png");
   
 }
 .dark .favcard{
@@ -118,7 +121,7 @@ html.dark {
   fill: #1F2021;
 }
 .dark .circle-text img{
-  content: url("src/images/logo_dark.png");
+  content: url("../images/logo_dark.png");
 }
 html {
   background-color: #D3D3C7;
@@ -129,10 +132,10 @@ html {
   color: #1F2021;
 }
  .horcent .heroimg{
-  content: url(src/images/hero/hero_image_dark.png); 
+  content: url(../images/hero/hero_image_dark.png); 
 }
 .dark .horcent .heroimg{
-  content: url(src/images/hero/hero_image_light.png); 
+  content: url(../images/hero/hero_image_light.png); 
 }
 .horcent .chngcontainer{
   background-color: #1F2021;
@@ -141,19 +144,19 @@ html {
 }
 .horcent .hro2{
   
-  content: url(src/images/hero/hero2.png);
+  content: url(../images/hero/hero2.png);
   
   border-radius: 17px;
 
 }
  .horcent .y2k {
-  content: url(src/images/hero/y2k_star_black.png);
+  content: url(../images/hero/y2k_star_black.png);
   position: relative;
 
 }
 
 .horcent .subra {
-  content: url(src/images/hero/Subtract_black.png);
+  content: url(../images/hero/Subtract_black.png);
 
 }
 .horcent .marquee{
@@ -163,7 +166,7 @@ html {
   color: #2E4E95;
 }
 .horcent .arrow{
-  content: url(src/images/hero/arrowdark.svg);
+  content: url(../images/hero/arrowdark.svg);
 }
 
 .abouttext{
@@ -178,7 +181,7 @@ html {
   color:#D3D3C7;
 }
 .ticketcard {
-  content: url("public/assets/images/about/Ticket_dark.png");
+  content: url("../../public/assets/images/about/Ticket_dark.png");
   
 }
 .favcard{
@@ -191,14 +194,14 @@ html {
   fill: #D3D3C7;
 }
 .circle-text img{
-  content: url("src/images/logo_light.png");
+  content: url("../images/logo_light.png");
 }
 
 .logopic img{
-  content: url("src/images/logo_dark.png");
+  content: url("../images/logo_dark.png");
 }
 .dark .logopic img{
-  content: url("src/images/logo_light.png");
+  content: url("../images/logo_light.png");
 }
 .favcard .desc{
   font-size: 14px;
@@ -212,42 +215,42 @@ html {
 }
 
 .dark .cards .song img{
-content: url(public/assets/images/about/phonk_dark.png);
+content: url(../../public/assets/images/about/phonk_dark.png);
 }
 .dark .cards .game img{
-  content: url(public/assets/images/about/game_light.png);
+  content: url(../../public/assets/images/about/game_light.png);
 
 }
 .dark .cards .distro img{
-  content: url(public/assets/images/about/arch_light.png);
+  content: url(../../public/assets/images/about/arch_light.png);
 
 }
 .dark .cards .tool img{
-  content: url(public/assets/images/about/ps_light.png);
+  content: url(../../public/assets/images/about/ps_light.png);
 
 }
 .dark .cards .manga img{
-  content: url(public/assets/images/about/op_manga_dark.png);
+  content: url(../../public/assets/images/about/op_manga_dark.png);
 
 }
 
  .cards .song img{
-  content: url(public/assets/images/about/phonk_light.png);
+  content: url(../../public/assets/images/about/phonk_light.png);
 }
  .cards .game img{
-  content: url(public/assets/images/about/game_dark.png);
+  content: url(../../public/assets/images/about/game_dark.png);
 
 }
  .cards .distro img{
-  content: url(public/assets/images/about/arch_dark.png);
+  content: url(../../public/assets/images/about/arch_dark.png);
 
 }
  .cards .tool img{
-  content: url(public/assets/images/about/ps_dark.png);
+  content: url(../../public/assets/images/about/ps_dark.png);
 
 }
  .cards .manga img{
-  content: url(public/assets/images/about/op_manga_light.png);
+  content: url(../../public/assets/images/about/op_manga_light.png);
 
 }
 .horcent .screen{
@@ -277,4 +280,227 @@ body{
 
 .conmarquee span{
   color: #2E4E95;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+
+ 
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 2em;
+  color: #1F2021;
+  z-index: 0;
+  backdrop-filter: blur(15px);
+
+}
+.dark nav{
+  color: #d3d3c7;
+}
+
+.website-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-top: 10em;
+  padding: 6em 2em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.website-content h1 {
+  font-size: 80px;
+  font-weight: 500;
+  margin-bottom: 0.25em;
+}
+
+.website-content p {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.menu-open-btn {
+  cursor: pointer;
+}
+
+h1.header {
+  position: absolute;
+  bottom: 0;
+  margin: 0.25em;
+  font-weight: 400;
+  color: #fff;
+  font-size: 140px;
+  line-height: 1;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  margin-top: 10px;
+  width: 60%;
+  padding: 2em;
+  background: #1F2021;
+  pointer-events: none;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  z-index: 1000 !important;
+  color:#d3d3c7;
+
+}
+.menu-overlay a,p{
+  color: #D3D3C7;
+}
+.dark .menu-overlay{
+  background: #D3D3C7;
+  color:#1f2021;
+
+}
+
+.menu-close-btn {
+  cursor: pointer;
+}
+
+.menu-nav {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 1em;
+ color: var(--color-menu-text);
+}
+
+.menu-cols {
+  display: flex;
+}
+
+.menu-cols > div {
+  flex: 1;
+  padding: 1em 0;
+}
+
+.video {
+  width: 50%;
+}
+
+.video-preview {
+  width: 100%;
+  height: 0px;
+  background: url(./assets/showreel-thumbnail.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.video-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  color: var(--color-menu-text);
+}
+
+.menu-link {
+  position: relative;
+  width: max-content;
+}
+
+.menu-link a {
+  font-size: 40px;
+}
+
+.menu-link:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-menu-text);
+  transition: 0.3s all;
+}
+
+.menu-link:hover.menu-link:after {
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  margin: 2em 0;
+  border: 1px solid var(--color-menu-text);
+  width: max-content;
+  padding: 1.25em 2.5em;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-menu-text);
+  transition: 0.3s all;
+  z-index: -1;
+}
+
+.btn:hover a {
+  color: #1f2021;
+}
+
+.dark .btn:hover a {
+  color: #d3d3c7;
+}
+
+
+.btn:hover.btn:before {
+  width: 100%;
+}
+
+.menu-footer {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-menu-text);
+}
+
+.menu-divider {
+  width: 0%;
+  height: 1px;
+  background: var(--color-divider);
+  margin: 1em 0;
+}
+
+.menu-footer-copy {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socials {
+  display: flex;
+  gap: 1em;
+}
+
+@media(max-width: 900px) {
+  .menu-overlay {
+      height: 100vh;
+  }
+
+  .menu-cols {
+      display: block;
+  }
+
+  .video-preview {
+      height: 125px;
+  }
+
+  .menu-link a {
+      font-size: 30px;
+  }
+
+  h1.header {
+      font-size: 40px;
+  }
 }

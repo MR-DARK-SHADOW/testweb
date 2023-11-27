@@ -27,26 +27,24 @@ import ThemeIcon from 'src/templates/ThemeIcon.astro';
   content: " ";
 }
 #change:after {
-  content: '';
+  content: 'Game Developer';
 
-  animation: change 3s linear infinite;
+  animation: change 6s linear infinite;
 }
 @keyframes change {
   0% {
     content: 'UI/UX Designer';
   }
-  30% {
+  25% {
     content: 'CTF Player';
   }
-  60% {
+  50% {
     content: 'Graphic Designer';
   }
-  90% {
+  75% {
     content: 'Web Developer';
   }
-  100% {
-    
-  }
+ 
 }
 .marquee {
   position: relative;

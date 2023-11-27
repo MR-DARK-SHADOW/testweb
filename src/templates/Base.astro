@@ -1,6 +1,5 @@
 ---
 import BaseHead from './BaseHead.astro';
-import Nav from '@/partials/Nav.astro';
 
 export interface Props {
   head: {
@@ -13,6 +12,7 @@ export interface Props {
 <html lang='en'>
   <head>
     <BaseHead />
+    <link rel='stylesheet' href='src/styles/global.css' />
     <style>
       .noise::before {
         position: fixed;
@@ -40,10 +40,238 @@ export interface Props {
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
   </head>
   <body class='overflow-x-hidden'>
-    <Nav />
     <div class='noise'>
-      
       <slot></slot>
+
+      <div class='fixed   bottom-1 left-[12.5%] flex w-[75%] justify-center'>
+        <div
+          class='ease-[cubic-bezier(0.22, 1, 0.36, 1)] mx-3 flex h-fit w-fit min-w-0 items-end gap-[10px] overflow-visible rounded-[20px] border-y-[0.075rem] border-[#404040b1] bg-[#00000051] p-[10px] backdrop-blur-[15px] transition-all  duration-200'
+        >
+          <div class='flex gap-[10px]'>
+            <button
+              class='group flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border-y-[1px] border-[#404040b1] bg-[#191919] transition-colors duration-150 hover:bg-[#222222]'
+              ><div
+                class='border-px border-accent pointer-events-none absolute h-fit w-fit rounded-md border border-opacity-10 bg-[#222222] px-2 py-0.5'
+                style='opacity: 0; transform: translateY(-40px) translateZ(0px);'
+              >
+                <p
+                  class='font-Spline_Sans_Mono text-highlight text-xs font-light'
+                >
+                  Home
+                </p>
+              </div><span
+                style='box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%'
+                ><span
+                  style='box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%'
+                  ><img
+                    style='display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0'
+                    alt=''
+                    aria-hidden='true'
+                    src='data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e'
+                  />
+                </span><img
+                  alt='home-icon'
+                  srcset='/icons/dock/active/home.svg 1x, /icons/dock/active/home.svg 2x'
+                  src='/icons/dock/active/home.svg'
+                  decoding='async'
+                  data-nimg='intrinsic'
+                  style='position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%'
+                />
+              </span><div
+                class='absolute bottom-[3px] h-1 w-1 rounded-full bg-[#404040b1]'
+                data-projection-id='294'
+                style='transform: none; transform-origin: 50% 50% 0px; opacity: 1;'
+              >
+              </div>
+            </button>
+          </div><div class='flex gap-[10px]'>
+            <button
+              class='group flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border-y-[1px] border-[#404040b1] bg-[#191919] transition-colors duration-150 hover:bg-[#222222]'
+              ><div
+                class='border-px border-accent pointer-events-none absolute h-fit w-fit rounded-md border border-opacity-10 bg-[#222222] px-2 py-0.5'
+                style='opacity: 0; transform: translateY(-40px) translateZ(0px);'
+              >
+                <p class='font-Spline_Sans_Mono text-accent text-xs font-light'>
+                  About
+                </p>
+              </div><span
+                style='box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%'
+                ><span
+                  style='box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%'
+                  ><img
+                    style='display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0'
+                    alt=''
+                    aria-hidden='true'
+                    src='data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e'
+                  />
+                </span><img
+                  alt='about-icon'
+                  srcset='/icons/dock/inactive/about.svg 1x, /icons/dock/inactive/about.svg 2x'
+                  src='/icons/dock/inactive/about.svg'
+                  decoding='async'
+                  data-nimg='intrinsic'
+                  style='position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%'
+                />
+              </span>
+            </button>
+          </div><div class='flex gap-[10px]'>
+            <button
+              class='group flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border-y-[1px] border-[#404040b1] bg-[#191919] transition-colors duration-150 hover:bg-[#222222]'
+              ><div
+                class='border-px border-accent pointer-events-none absolute h-fit w-fit rounded-md border border-opacity-10 bg-[#222222] px-2 py-0.5'
+                style='opacity: 0; transform: translateY(-40px) translateZ(0px);'
+              >
+                <p class='font-Spline_Sans_Mono text-accent text-xs font-light'>
+                  Work
+                </p>
+              </div><span
+                style='box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%'
+                ><span
+                  style='box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%'
+                  ><img
+                    style='display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0'
+                    alt=''
+                    aria-hidden='true'
+                    src='data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e'
+                  />
+                </span><img
+                  alt='work-icon'
+                  srcset='/icons/dock/inactive/work.svg 1x, /icons/dock/inactive/work.svg 2x'
+                  src='/icons/dock/inactive/work.svg'
+                  decoding='async'
+                  data-nimg='intrinsic'
+                  style='position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%'
+                />
+              </span>
+            </button>
+          </div><div class='flex gap-[10px]'>
+            <button
+              class='group flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border-y-[1px] border-[#404040b1] bg-[#191919] transition-colors duration-150 hover:bg-[#222222]'
+              ><div
+                class='border-px border-accent pointer-events-none absolute h-fit w-fit rounded-md border border-opacity-10 bg-[#222222] px-2 py-0.5'
+                style='opacity: 0; transform: translateY(-40px) translateZ(0px);'
+              >
+                <p class='font-Spline_Sans_Mono text-accent text-xs font-light'>
+                  Play
+                </p>
+              </div><span
+                style='box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%'
+                ><span
+                  style='box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%'
+                  ><img
+                    style='display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0'
+                    alt=''
+                    aria-hidden='true'
+                    src='data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e'
+                  />
+                </span><img
+                  alt='play-icon'
+                  srcset='/icons/dock/inactive/gamepad.svg 1x, /icons/dock/inactive/gamepad.svg 2x'
+                  src='/icons/dock/inactive/gamepad.svg'
+                  decoding='async'
+                  data-nimg='intrinsic'
+                  style='position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%'
+                />
+              </span>
+            </button><div
+              class='h-11 w-1 shrink-0 border-x-[0.05rem] border-[#4040407f]'
+            >
+            </div>
+          </div><div class='flex gap-[10px]'>
+            <button
+              class='menu-open-btn group flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border-y-[1px] border-[#404040b1] bg-[#191919] transition-colors duration-150 hover:bg-[#222222]'
+              ><div
+                class='border-px border-accent pointer-events-none absolute h-fit w-fit rounded-md border border-opacity-10 bg-[#222222] px-2 py-0.5'
+                style='opacity: 0; transform: translateY(-40px) translateZ(0px);'
+              >
+                <p
+                  class='font-Spline_Sans_Mono text-accent  text-xs font-light'
+                >
+                  Sound
+                </p>
+              </div><span
+                style='box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%'
+                ><span
+                  style='box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%'
+                  ><img
+                    style='display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0'
+                    alt=''
+                    aria-hidden='true'
+                    src='data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e'
+                  />
+                </span><img
+                  alt='sound-icon'
+                  srcset='/icons/dock/inactive/sound.svg 1x, /icons/dock/inactive/sound.svg 2x'
+                  src='/icons/dock/inactive/sound.svg'
+                  decoding='async'
+                  data-nimg='intrinsic'
+                  style='position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%'
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class='menu-overlay rounded-md'>
+          <div class='menu-nav'>
+            <div class='menu-logo'>DecentParadox</div>
+            <div class='menu-close-btn'>Close</div>
+          </div>
+          <div class='menu-cols'>
+            <div class='col'>
+              <div class='video'>
+                <div class='video-preview'></div>
+                <div class='video-details'>
+                  <p>
+                    <i class='ph-fill ph-play-circle'></i>
+                    Play reel
+                  </p>
+                  <p>-01:18</p>
+                </div>
+              </div>
+            </div>
+            <div class='col'>
+              <div class='menu-link'>
+                <a href='#'>Home</a>
+              </div>
+              <div class='menu-link'>
+                <a href='#'>About</a>
+              </div>
+              <div class='menu-link'>
+                <a href='#'>Projects</a>
+              </div>
+              <div class='menu-link'>
+                <a href='#'>Blog</a>
+              </div>
+              <div class='menu-link'>
+                <a href='#'>Contact</a>
+              </div>
+              <div class='btn'>
+                <a href='#'>Hire me</a>
+              </div>
+            </div>
+          </div>
+          <div class='menu-footer'>
+            <div class='menu-divider'></div>
+            <div class='menu-footer-copy'>
+              <div class='slogan'><p>Sasank Reddy's Portfolio</p></div>
+              <div class='socials'>
+                <a href='#'>Twitter</a>
+                <a href='#'>Instagram</a>
+                <a href='#'>LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script
+      is:inline
+      src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'
+    >
+
+    </script>
+    <script src='src/partials/nav.js'>
+
+    </script>
   </body>
 </html>
