@@ -63,6 +63,177 @@ export interface Props {
         font-family: 'Kleemax';
         z-index: 10000;
       }
+
+      .nav {
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 30%;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+        border-radius: 10px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .nav-top {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        display: none;
+        opacity: 0;
+        transform: scale(0.9);
+        padding: 0 10px !important;
+      }
+
+      .nav-bottom {
+        position: absolute;
+        width: 30%;
+        height: 60px;
+        display: flex;
+        gap: 5px;
+        padding: 12px 10px 10px 10px;
+      }
+
+      .nav-home {
+        flex: 1;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s all;
+      }
+
+      .nav-home:hover {
+        background: rgba(0, 0, 0, 0.75);
+      }
+
+      .nav-home .nav-item {
+        gap: 10px;
+      }
+
+      .nav-items {
+        flex: 4;
+        height: 100%;
+      }
+
+      .nav-home .nav-item,
+      .nav-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-items {
+        gap: 5px;
+      }
+
+      .nav-items > div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        transition: 0.5s all;
+      }
+
+      .nav-items .nav-item:hover {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .nav-items .nav-item:hover a {
+        color: #fff;
+      }
+
+      .more-links {
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        display: flex;
+      }
+
+      .link a {
+        color: #fff;
+      }
+
+      .col {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .col > div {
+        flex: 1;
+        padding: 10px 15px;
+      }
+
+      .col:before {
+        position: absolute;
+        content: '';
+        top: 30px;
+        left: 0;
+        width: 1px;
+        height: 85%;
+        display: block;
+        border-left: 1px solid rgba(255, 255, 255, 0.25);
+        border-style: dashed;
+      }
+
+      .col-title {
+        position: relative;
+        margin-bottom: -25px;
+      }
+
+      .col-title p {
+        position: relative;
+        opacity: 0.75;
+      }
+
+      .col-title p:before {
+        position: absolute;
+        content: '';
+        top: 6px;
+        left: -16px;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background: #fff;
+        display: block;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          bottom: 10px;
+        }
+
+        .nav {
+          width: 55%;
+        }
+        p,
+        a {
+          font-size: 12px;
+        }
+        .nav-home .nav-item {
+          gap: 5px;
+        }
+      }
     </style>
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
   </head>
@@ -85,7 +256,7 @@ export interface Props {
       <slot></slot>
 
       <div class='fixed   bottom-1 left-[12.5%] flex w-[75%] justify-center'>
-        <div
+        <!-- <div
           class='ease-[cubic-bezier(0.22, 1, 0.36, 1)] mx-3 flex h-fit w-fit min-w-0 items-end gap-[10px] overflow-visible rounded-[20px] border-y-[0.075rem] border-[#404040b1] bg-[#00000051] p-[10px] backdrop-blur-[15px] transition-all  duration-200'
         >
           <div class='flex gap-[10px]'>
@@ -251,58 +422,140 @@ export interface Props {
               </span>
             </button>
           </div>
-        </div>
-        <div class='menu-overlay rounded-md'>
-          <div class='menu-nav'>
-            <div class='menu-logo'>DecentParadox</div>
-            <div class='menu-close-btn'>Close</div>
+        </div> -->
+        <div class='nav bottom-[10px]'>
+          <div>
+        
           </div>
-          <div class='menu-cols'>
-            <div class='col'>
-              <div class='video'>
-                <div class='video-preview'></div>
-                <div class='video-details'>
-                  <p>
-                    <i class='ph-fill ph-play-circle'></i>
-                    Play reel
-                  </p>
-                  <p>-01:18</p>
+          </div>
+          <div class='nav-bottom bottom-[5px]'>
+            <div class='nav-home'>
+              <div class='nav-item' id='toggle-btn'>
+                <div class='hamburger'>
+                  <p href='#'>   <i class='ph-light ph-list'></i></p>
                 </div>
               </div>
             </div>
-            <div class='col'>
-              <div class='menu-link'>
-                <a href='#'>Home</a>
+            <div class='nav-items'>
+              <div class='nav-item'>
+                <a href='#'><i class="ph ph-house"></i></a>
               </div>
-              <div class='menu-link'>
-                <a href='#'>About</a>
+              <div class='nav-item'>
+                <a href='#'><i class="ph ph-user"></i></a>
               </div>
-              <div class='menu-link'>
-                <a href='#'>Projects</a>
+              <div class='nav-item'>
+                <a href='#'><i class="ph ph-cardholder"></i></a>
               </div>
-              <div class='menu-link'>
-                <a href='#'>Blog</a>
-              </div>
-              <div class='menu-link'>
-                <a href='#'>Contact</a>
-              </div>
-              <div class='btn'>
-                <a href='#'>Hire me</a>
+              <div class='nav-item'>
+                <a href='#'><i class="ph ph-paper-plane-tilt"></i></a>
               </div>
             </div>
           </div>
-          <div class='menu-footer'>
-            <div class='menu-divider'></div>
-            <div class='menu-footer-copy'>
-              <div class='slogan'><p>Sasank Reddy's Portfolio</p></div>
-              <div class='socials'>
-                <a href='#'>Twitter</a>
-                <a href='#'>Instagram</a>
-                <a href='#'>LinkedIn</a>
-              </div>
-            </div>
-          </div>
+         
         </div>
+        <script
+          src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'
+        >
+
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const nav = document.querySelector('.nav');
+            const navHome = document.querySelector('.nav-home');
+            const navTop = document.querySelector('.nav-top');
+            const navItems = document.querySelector('.nav-items');
+            const icon = document.querySelector('.hamburger i');
+
+            let isOpen = false;
+
+            // Setting the initial state for the elements
+            gsap.set(nav, { height: '60px' });
+            gsap.set(navTop, { opacity: 0, scale: 0.9, display: 'none' });
+            gsap.set(navItems, { opacity: 1, display: 'flex' });
+            gsap.set(navHome, { flexGrow: 0 });
+
+            navHome.addEventListener('click', function () {
+              if (!isOpen) {
+                gsap.to(nav, {
+                  height: '370px',
+                  duration: 0.75,
+                  ease: 'power4.inOut',
+                  immediateRender: false,
+                });
+
+                gsap.to(navTop, {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.3,
+                  onStart: function () {
+                    gsap.set(navTop, { display: 'block' });
+                  },
+                  delay: 0.5,
+                  immediateRender: false,
+                });
+
+                gsap.to(navItems, {
+                  opacity: 0,
+                  duration: 0.1,
+                  onComplete: function () {
+                    gsap.set(navItems, { display: 'none' });
+                  },
+                  immediateRender: false,
+                });
+
+                gsap.to(navHome, {
+                  flexGrow: 1,
+                  duration: 0.2,
+                  ease: 'power4.inOut',
+                  delay: 0,
+                  immediateRender: false,
+                  onComplete: function () {
+                    icon.className = 'ph-light ph-x';
+                  },
+                });
+              } else {
+                gsap.to(nav, {
+                  height: '60px',
+                  duration: 0.75,
+                  ease: 'power4.inOut',
+                  delay: 0.2,
+                  immediateRender: false,
+                });
+
+                gsap.to(navTop, {
+                  opacity: 0,
+                  scale: 0.9,
+                  duration: 0.2,
+                  onComplete: function () {
+                    gsap.set(navTop, { display: 'none' });
+                  },
+                  immediateRender: false,
+                });
+
+                gsap.to(navHome, {
+                  flexGrow: 0,
+                  duration: 0.2,
+                  ease: 'power4.inOut',
+                  immediateRender: false,
+                  onComplete: function () {
+                    icon.className = 'ph-light ph-list';
+                  },
+                });
+
+                gsap.to(navItems, {
+                  opacity: 1,
+                  duration: 0.2,
+                  onStart: function () {
+                    gsap.set(navItems, { display: 'flex' });
+                  },
+                  delay: 0.5,
+                  immediateRender: false,
+                });
+              }
+              isOpen = !isOpen;
+            });
+          });
+        </script>
       </div>
     </div>
     <script
@@ -324,10 +577,9 @@ export interface Props {
         function updateCounter() {
           if (currentValue === 100) {
             counterElement?.remove();
-            setTimeout(() => { overlay?.remove(); }, 2000);
-              
-            
-
+            setTimeout(() => {
+              overlay?.remove();
+            }, 4000);
             return;
           }
 
@@ -380,5 +632,8 @@ export interface Props {
     <script is:inline src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'>
 
     </script>
+        <script is:inline src="https://unpkg.com/@phosphor-icons/web"></script>
+        <script is:inline src=" https://cdn.jsdelivr.net/npm/lucide@0.293.0/dist/umd/lucide.min.js "></script>
+
   </body>
 </html>
