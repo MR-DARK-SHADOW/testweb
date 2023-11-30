@@ -1,5 +1,7 @@
 ---
 import ThemeIcon from 'src/templates/ThemeIcon.astro';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 //974721
 ---
 
@@ -550,13 +552,10 @@ import ThemeIcon from 'src/templates/ThemeIcon.astro';
     </div>
   </div>
 </section>
-<script
-  is:inline
-  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js'
->
 
-</script>
 <script>
+  import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
   let currentScroll = 0;
   let isScrollingDown = true;
   let arrows = document.querySelectorAll('.arrow');
@@ -573,7 +572,7 @@ import ThemeIcon from 'src/templates/ThemeIcon.astro';
   gsap.set('.marquee__inner', { xPercent: -50 });
 
   window.addEventListener('scroll', function () {
-    if (window.pageYOffset > currentScroll) {
+    if (window.scrollY > currentScroll) {
       isScrollingDown = true;
     } else {
       isScrollingDown = false;
@@ -591,7 +590,7 @@ import ThemeIcon from 'src/templates/ThemeIcon.astro';
       }
     });
 
-    currentScroll = window.pageYOffset;
+    currentScroll = window.scrollY;
   });
 </script>
 

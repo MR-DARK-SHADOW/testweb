@@ -1,5 +1,8 @@
 ---
 import Ticket from 'src/partials/ticket.astro';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 ---
 
 <style>
@@ -475,12 +478,9 @@ import Ticket from 'src/partials/ticket.astro';
     </div>
   </div>
 </section>
-<script
-  is:inline
-  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'
->
 
-</script>
+
+
 
 <script>
   var list = document.querySelector('ul');
@@ -495,21 +495,7 @@ import Ticket from 'src/partials/ticket.astro';
   );
 </script>
 
-<script
-  is:inline
-  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
->
 
-</script>
-<script
-  is:inline
-  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
->
 
-</script>
-<script
-  is:inline
-  src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js'
->
 
 </script>

@@ -9,10 +9,7 @@
   :root { font-family: 'Inter var', sans-serif; }
 }
 /* CSS */
-:root { font-family: 'Helvetica', sans-serif; }
-@supports (font-variation-settings: normal) {
-  :root { font-family: 'Helvetica var', sans-serif; }
-}
+
 @font-face {
   font-family: "Mersad";
   src: url(../../public/fonts/MersadRegular.otf);

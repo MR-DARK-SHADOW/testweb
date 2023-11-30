@@ -1,3 +1,6 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 document.addEventListener('DOMContentLoaded', function () {
   const tl = gsap.timeline({ paused: true });
 

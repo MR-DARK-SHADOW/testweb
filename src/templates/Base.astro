@@ -1,6 +1,7 @@
 ---
 import BaseHead from './BaseHead.astro';
 
+
 export interface Props {
   head: {
     title: string;
@@ -453,12 +454,12 @@ export interface Props {
           </div>
          
         </div>
-        <script
-          src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'
-        >
+    
 
-        </script>
+       
         <script>
+          import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
           document.addEventListener('DOMContentLoaded', function () {
             const nav = document.querySelector('.nav');
             const navHome = document.querySelector('.nav-home');
@@ -558,16 +559,14 @@ export interface Props {
         </script>
       </div>
     </div>
-    <script
-      is:inline
-      src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'
-    >
 
     </script>
     <script src='src/partials/nav.js'>
 
     </script>
     <script>
+      import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
       function startLoader() {
         var counterElement = document.querySelector('.counter');
         var overlay = document.querySelector('.overlay');
@@ -626,14 +625,11 @@ export interface Props {
         ease: 'power4.inOut',
       });
     </script>
-    <script is:inline src='https://unpkg.co/gsap@3/dist/gsap.min.js'>
 
     </script>
-    <script is:inline src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'>
 
     </script>
-        <script is:inline src="https://unpkg.com/@phosphor-icons/web"></script>
-        <script is:inline src=" https://cdn.jsdelivr.net/npm/lucide@0.293.0/dist/umd/lucide.min.js "></script>
+       
 
   </body>
 </html>
