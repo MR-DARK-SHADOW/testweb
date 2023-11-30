@@ -1,0 +1,70 @@
+---
+---
+
+<style>
+  .work_heading {
+    font-family: 'Kleemax';
+
+    text-transform: uppercase;
+
+    padding-top: 35px;
+  }
+</style>
+<section
+  class='max-w-screen no-scrollbar flex flex-row content-center overflow-x-hidden py-[35px]'
+>
+  <div class='mx-auto   max-w-full'>
+    <div class='mx-auto'>
+      <div class='mx-auto w-screen  px-1 py-12 lg:pt-6'>
+        <div
+          class='relative mx-auto  w-[75%] text-xs md:text-sm lg:text-sm xl:text-[16px] 2xl:text-[18px]'
+        >
+          <div
+            class='work_heading pb-[55px] pt-14 text-center leading-4 sm:text-3xl md:text-4xl lg:text-5xl lg:leading-6 xl:text-left xl:text-6xl xl:leading-7 2xl:text-left 2xl:text-7xl 2xl:leading-9'
+          >
+            <h1>WORKS</h1>
+          </div>
+          <div class='workcontent'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'
+>
+
+</script>
+
+<script>
+  var list = document.querySelector('ul');
+  list.addEventListener(
+    'click',
+    function (ev) {
+      if ((ev.target as HTMLElement).tagName === 'LI') {
+        (ev.target as HTMLElement).classList.toggle('checked');
+      }
+    },
+    false
+  );
+</script>
+
+<script
+  is:inline
+  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+>
+
+</script>
+<script
+  is:inline
+  src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+>
+
+</script>
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js'
+>
+
+</script>
